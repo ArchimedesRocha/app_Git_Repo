@@ -4,7 +4,7 @@ export const Header = styled.header`
 display: flex;
 align-items: center;
 justify-content: center;
-background: var(--color-black);
+background: var(--color-gray-600);
 height: 8rem;
 
 margin-bottom: 3.2rem;
@@ -36,7 +36,11 @@ input {
   padding: 1.6rem;
   border: 0.1rem solid var(--color-gray-100);
   border-radius: .8rem;
-  outline: none;
+  outline: transparent;
+
+  &.error {
+    border: 0.1rem solid var(--color-red-200);
+  }
 }
 `;
 
@@ -47,6 +51,18 @@ const animate = keyframes`
   }
   to{
     transform: rotate(360deg);
+  }
+`;
+
+const fadeRight = keyframes`
+ from {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 `;
 
@@ -62,9 +78,12 @@ export const SubmitButton = styled.button.attrs(props => ({
   border: 0.1rem solid var(--color-gray-100);
   border-radius: .8rem;
 
+  background: var(--color-gray-600);
+
   &[disabled] {
     cursor: not-allowed;
-    opacity: .5;
+    opacity: .5;    
+    background: var(--color-white);
   }
 
   ${props => props.loading &&
@@ -77,7 +96,6 @@ export const SubmitButton = styled.button.attrs(props => ({
 `;
 
 export const List = styled.ul`
-margin-top: 3.2rem;
 
 li{
   display: flex;
@@ -88,12 +106,89 @@ li{
 
   & + li {
     border-top: 0.1rem solid var(--color-gray-100);
-  }
+  }  
 }
+
+p {    
+    margin-top: .8rem;
+    font-size: 1.4rem;
+    color: var(--color-red-600);
+    padding-left: 1.6rem;
+  }
 `;
 
 export const DeleteButton = styled.button.attrs({
   type:'button'
 })`
 margin-right: .8rem;
+`;
+
+export const NotFoundError = styled.div`
+display: none;
+position: absolute;
+bottom: 1.6rem;
+right:0;
+padding: .8rem;
+
+background: var(--color-red-700);
+border-radius: .8rem;
+border: 0.1rem solid var(--color-red-200);
+
+transition: all .2s;
+&.error {
+  display: block;
+  margin-top: .8rem;
+    span {    
+      font-size: 1.4rem;
+      color: var(--color-white);
+    }
+    animation: ${fadeRight} .2s linear;
+}
+`;
+
+
+export const EmptyError = styled.div`
+display: none;
+position: absolute;
+bottom: 1.6rem;
+right:0;
+padding: .8rem;
+
+background: var(--color-red-700);
+border-radius: .8rem;
+border: 0.1rem solid var(--color-red-200);
+
+transition: all .2s;
+&.error {
+  display: block;
+  margin-top: .8rem;
+    span {    
+      font-size: 1.4rem;
+      color: var(--color-white);
+    }
+    animation: ${fadeRight} .2s linear;
+}
+`;
+
+export const EqualError = styled.div`
+display: none;
+position: absolute;
+bottom: 1.6rem;
+right:0;
+padding: .8rem;
+
+background: var(--color-red-700);
+border-radius: .8rem;
+border: 0.1rem solid var(--color-red-200);
+
+transition: all .2s;
+&.error {
+  display: block;
+  margin-top: .8rem;
+    span {    
+      font-size: 1.4rem;
+      color: var(--color-white);
+    }
+    animation: ${fadeRight} .2s linear;
+}
 `;
