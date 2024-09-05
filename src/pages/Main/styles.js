@@ -14,8 +14,10 @@ nav {
     li {
       a {
         display: flex;
+        align-items: center;
         gap: 1.6rem;
-        color: var(--color-white)        
+        color: var(--color-white);
+        font-size:2.4rem;     
       }
     }
   }
@@ -27,7 +29,7 @@ export const Form = styled.form`
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 3.2rem;
+gap: 1.6rem;
 
 input {
   width: 100%;
@@ -72,5 +74,26 @@ export const SubmitButton = styled.button.attrs(props => ({
     }
   `
   }
+`;
 
+export const List = styled.ul`
+margin-top: 3.2rem;
+
+li{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-between;
+  padding: 3.2rem 0;
+
+  & + li {
+    border-top: 0.1rem solid var(--color-gray-100);
+  }
+}
+`;
+
+export const DeleteButton = styled.button.attrs({
+  type:'button'
+})`
+margin-right: .8rem;
 `;
