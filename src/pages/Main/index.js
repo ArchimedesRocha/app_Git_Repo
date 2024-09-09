@@ -45,13 +45,12 @@ const handleSubmit = useCallback((e)=> {
       setNotFoundError(false);
 
       try{
-
         if(getRepo === ''){
           setEmptyError(true);
           setLoading(false);
           setTimeout(() => setEmptyError(false), 5000);
           return;
-        }        
+        }
 
         const hasRepo = listRepo.find(repo => repo.name === getRepo);
 
@@ -137,7 +136,9 @@ const handleSubmit = useCallback((e)=> {
                   </DeleteButton>
                   {repo.name}
                 </span>
-                <Link to=""><FaBars style={{fill:'#2B2828'}} size={16}/></Link>
+                <Link to={`/repositorio/${encodeURIComponent(repo.name)}`}>
+                  <FaBars style={{fill:'#2B2828'}} size={16}/>
+                </Link>
               </li>
               ))
             ) : (
