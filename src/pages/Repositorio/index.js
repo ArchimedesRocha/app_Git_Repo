@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from '../services/api';
-import { Owner, Loading, BackButton, IssuesList } from './styles'
-import {FaArrowLeft} from 'react-icons/fa'
+import { Owner, Loading, BackButton, IssuesList, PageActions } from './styles'
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 
 
 export default function Repositorio() {
@@ -12,6 +12,7 @@ export default function Repositorio() {
   const  [repository, setRepository] = useState({});
   const  [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function load(){
@@ -35,7 +36,31 @@ export default function Repositorio() {
     }
 
     load();
-  }, [getNameRepo])
+  }, [getNameRepo]);
+
+  useEffect(() => {
+
+    async function loadIssue(){
+
+      const nomeRepo = decodeURIComponent(getNameRepo);
+      const response = await api.get(`/repos/${nomeRepo}/issues`, {
+        params: {
+          state: 'open',
+          page,
+          per_page: 5,
+        }
+      });
+
+      setIssues(response.data);
+    }
+
+    loadIssue()
+
+  }, [getNameRepo, page]);
+
+  function handlePage(action) {
+    setPage(action === 'back' ? page -1 : page +1)
+  }
 
   if(loading){
     return(
@@ -49,7 +74,7 @@ export default function Repositorio() {
     <div className="container">
 
       <BackButton to="/">
-        <FaArrowLeft style={{fill:'white'}} size={14}/>
+        <FaArrowLeft style={{fill:'white'}} size={16}/>
         Voltar
       </BackButton>
 
@@ -74,15 +99,34 @@ export default function Repositorio() {
               />
 
               <div>
-                <h4><span>Author:</span> {issue.user.login}</h4>
-                <h3><span>URL:</span> <Link to={issue.html_url} target="_blank" rel="noopener noreferrer">{issue.title}</Link></h3>
-                <p>{issue.labels.map(label=>(
-                  <span key={String(label.id)}>Issue: {label.name}</span>
+                <h3><span>Author:</span> {issue.user.login}</h3>
+                <h4><span>URL:</span> <Link to={issue.html_url} target="_blank" rel="noopener noreferrer">{issue.title}</Link></h4>
+                <p>Issues: {issue.labels.map(label=>(                  
+                  <span key={String(label.id)}> {label.name}</span>
                 ))}</p>
               </div>
             </li>     
         ))}
       </IssuesList>
+
+      <PageActions>
+        <button 
+        type="button"
+        onClick={()=> handlePage('prev')}
+        disabled={page < 2}
+        >        
+          <FaArrowLeft style={{fill:'white'}} size={16}/>
+          Voltar
+        </button>
+
+        <button 
+        type="button"
+        onClick={()=> handlePage('next')}
+        > 
+          Próximo        
+          <FaArrowRight style={{fill:'white'}} size={16}/>
+        </button>
+      </PageActions>
     </div>
   );
 }

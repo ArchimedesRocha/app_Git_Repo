@@ -12,20 +12,37 @@ export const BackButton = styled(Link)`
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: flex-start;
+justify-content: center;
 
-width: fit-content;
+width: 10rem;
 
 gap: .4rem;
 padding: .8rem;
 margin-top: 3.2rem;
 
-font-size: 1.4rem;
-
 border-radius: .8rem;
+border: 0.1rem solid var(--color-white);
 
 background: var(--color-gray-600);
 color: var(--color-white);
+
+transition: all .2s;
+
+svg {
+  transition: all .2s;
+}
+
+&:hover {    
+  color: var(--color-gray-600);
+  background: var(--color-white);
+  border: 0.1rem solid var(--color-gray-600);
+  padding: .8rem;
+  border-radius: .8rem;
+
+  svg {
+    display: none;
+  }
+}
 `
 
 export const Owner = styled.header`
@@ -35,7 +52,7 @@ justify-content: flex-start;
 
 gap: 1.6rem;
 padding: 1.6rem;
-margin-top: 1.6rem;
+margin-top: 3.2rem;
 
 border-radius: .8rem;
 
@@ -69,20 +86,17 @@ img {
 
 export const IssuesList = styled.div`
 margin: 3.2rem 0;
-padding: 1.6rem;
 
 li {
   display: flex;
-align-items: center;
-justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-start;
 
-gap: 1.6rem;
-padding: 1.6rem 0;
-margin-top: 1.6rem;
+  gap: 1.6rem;
+  padding: 1.6rem 0;
+  margin-top: 1.6rem;
 
-border-radius: .8rem;
-
-background: transparent;
+  background: transparent;
 
   img {
   width: 6.4rem;
@@ -92,12 +106,12 @@ background: transparent;
   background: var(--color-white);
 }
 
-h4 {
+h3 {
   font-weight: 600;
   margin-bottom: .4rem;
 }
 
-h3 {
+h4 {
   span {    
     font-size: 1.4rem;
     font-weight: 600;
@@ -116,15 +130,80 @@ h3 {
 
   p {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+
+    font-size: 1.4rem;
+    font-weight: 600;
     span {
       font-size: 1.4rem;
+      color: var(--color-white);
+      background: var(--color-gray);
+      padding: .4rem;
+      border-radius: .4rem;
     }
   }
 
   & + li {
   border-top: 0.1rem solid var(--color-gray-100);
 }
+}
+
+`
+
+export const PageActions = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 10rem;
+
+  gap: .4rem;
+  padding: .8rem;
+
+  border-radius: .8rem;
+  border: 0.1rem solid var(--color-white);
+
+  background: var(--color-gray-600);
+  color: var(--color-white);
+
+  transition: all .2s;
+
+  svg {
+    transition: all .2s;
+  }
+
+  &:hover {    
+    color: var(--color-gray-600);
+    background: var(--color-white);
+    border: 0.1rem solid var(--color-gray-600);
+    padding: .8rem;
+    border-radius: .8rem;
+
+    svg {
+      display: none;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      border: 0.1rem solid var(--color-white);
+      background: var(--color-gray-600);
+      color: var(--color-white);
+      svg {
+        display: block;
+      }
+    }
+  }
 }
 
 `
