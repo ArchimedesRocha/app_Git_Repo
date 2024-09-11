@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import api from '../services/api';
-import { Owner, Loading, BackButton } from './styles'
+import { Owner, Loading, BackButton, IssuesList } from './styles'
 import {FaArrowLeft} from 'react-icons/fa'
 
 
@@ -30,6 +30,8 @@ export default function Repositorio() {
       setRepository(repositorioData.data);
       setIssues(issuesData.data);
       setLoading(false);
+
+      console.log(issuesData.data)
     }
 
     load();
@@ -62,6 +64,25 @@ export default function Repositorio() {
           <p>{repository.description}</p>
         </div>
       </Owner>
+
+      <IssuesList>
+        {issues.map(issue => (
+            <li key={String(issue.id)}>
+              <img 
+                src={issue.user.avatar_url}
+                alt={issue.user.login}
+              />
+
+              <div>
+                <h4><span>Author:</span> {issue.user.login}</h4>
+                <h3><span>URL:</span> <Link to={issue.html_url} target="_blank" rel="noopener noreferrer">{issue.title}</Link></h3>
+                <p>{issue.labels.map(label=>(
+                  <span key={String(label.id)}>Issue: {label.name}</span>
+                ))}</p>
+              </div>
+            </li>     
+        ))}
+      </IssuesList>
     </div>
   );
 }

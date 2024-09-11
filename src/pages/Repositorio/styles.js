@@ -66,3 +66,65 @@ img {
   }
 }
 `
+
+export const IssuesList = styled.div`
+margin: 3.2rem 0;
+padding: 1.6rem;
+
+li {
+  display: flex;
+align-items: center;
+justify-content: flex-start;
+
+gap: 1.6rem;
+padding: 1.6rem 0;
+margin-top: 1.6rem;
+
+border-radius: .8rem;
+
+background: transparent;
+
+  img {
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 0.1rem solid var(--color-gray-100);
+  border-radius: 50%;
+  background: var(--color-white);
+}
+
+h4 {
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+h3 {
+  span {    
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+  }
+  margin-bottom: .4rem;
+}
+
+
+  a {
+    font-size: 1.4rem;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  & + li {
+  border-top: 0.1rem solid var(--color-gray-100);
+}
+}
+
+`
