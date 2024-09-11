@@ -31,6 +31,8 @@ align-items: center;
 justify-content: center;
 gap: 1.6rem;
 
+margin: 6.4rem 0 3.2rem 0;
+
 input {
   width: 100%;
   padding: 1.6rem;
