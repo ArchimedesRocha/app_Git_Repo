@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+### Banner do projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./public/thumbnail-01.png">
+<img src="./public/thumbnail-02.png">
 
-## Available Scripts
+### Shortcuts
 
-In the project directory, you can run:
+<p align="left">
+ <a href="#título-do-projeto">Título do Projeto</a> •
+ <a href="#resumo">Resumo</a> • 
+ <a href="#status-do-projeto">Status do Projeto</a> • 
+ <a href="#features">Features</a> • 
+ <a href="#pré-requisitos">Pré-requisitos</a> • 
+ <a href="#rodando-o-projeto">Rodando o Projeto</a> • 
+ <a href="#autor">Autor</a> • 
+ <a href="#mit-license">Licença</a>
+</p>
 
-### `npm start`
+### Título do Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+GitHub Repositories Explorer
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Resumo
 
-### `npm test`
+Este projeto é uma aplicação web desenvolvida em React que permite ao usuário buscar, listar e visualizar detalhes de repositórios públicos do GitHub. A aplicação consome a API do GitHub para buscar informações dos repositórios, exibindo detalhes como nome, descrição, issues abertas e fechadas, entre outras informações relevantes. Durante o desenvolvimento, foram aplicados conceitos como componentização, gerenciamento de estado com hooks, manipulação de rotas, integração com API, validações e tratamento de erros.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Status do Projeto
 
-### `npm run build`
+<h4 align="left"> 
+	🚧 GitHub Repositories Explorer 🚀 Concluído 🚧
+</h4>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] Buscar e adicionar repositórios do GitHub à lista
+- [x] Listar todos os repositórios adicionados
+- [x] Excluir repositórios da lista
+- [x] Exibir detalhes de um repositório específico, como nome, descrição e issues
+- [x] Filtrar issues por status (todas, abertas, fechadas)
+- [x] Paginação das issues para navegação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Pré-requisitos
 
-### `npm run eject`
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: 
+- [Git](https://git-scm.com) 
+- [Node.js](https://nodejs.org/en/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Além disso, é bom ter um editor para trabalhar com o código, como o [VSCode](https://code.visualstudio.com/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Rodando o Projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone este repositório
+$ git clone <https://github.com/SeuUsuario/SeuRepositorio>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd SeuRepositorio
 
-## Learn More
+# Instale as dependências
+$ npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
 
-### Code Splitting
+### MIT License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+MIT License
 
-### Analyzing the Bundle Size
+Copyright ©️ 2024 Archimedes Rocha
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### Making a Progressive Web App
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
