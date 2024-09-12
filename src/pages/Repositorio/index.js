@@ -106,7 +106,7 @@ export default function Repositorio() {
       </Owner>
 
       <FilterList>
-        <p>FILTRAR ISSUES: </p>
+        <p>Filtrar Issues: </p>
         {filters.map((filter, index) => (
           <button
             style={{opacity: filter.active ? 1 : .5}}
