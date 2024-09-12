@@ -6,7 +6,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 100vh;
-`
+`;
 
 export const BackButton = styled(Link)`
 display: flex;
@@ -43,7 +43,7 @@ svg {
     display: none;
   }
 }
-`
+`;
 
 export const Owner = styled.header`
 display: flex;
@@ -82,7 +82,7 @@ img {
     color: var(--color-white);
   }
 }
-`
+`;
 
 export const IssuesList = styled.div`
 margin: 3.2rem 0;
@@ -149,7 +149,7 @@ h4 {
 }
 }
 
-`
+`;
 
 export const PageActions = styled.div`
 display: flex;
@@ -206,4 +206,63 @@ button {
   }
 }
 
-`
+`;
+
+export const FilterList = styled.div`
+  margin-top: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6rem;
+
+  button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 10rem;
+
+  gap: .4rem;
+  padding: .8rem;
+
+  border-radius: .8rem;
+  border: 0.1rem solid var(--color-white);
+
+  background: var(--color-gray-600);
+  color: var(--color-white);
+
+  transition: all .2s;
+
+  svg {
+    transition: all .2s;
+  }
+
+  &:hover {    
+    color: var(--color-gray-600);
+    background: var(--color-white);
+    border: 0.1rem solid var(--color-gray-600);
+    padding: .8rem;
+    border-radius: .8rem;
+
+    svg {
+      display: none;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      border: 0.1rem solid var(--color-white);
+      background: var(--color-gray-600);
+      color: var(--color-white);
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+`;
