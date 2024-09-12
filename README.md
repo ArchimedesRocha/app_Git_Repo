@@ -1,7 +1,7 @@
 ### Banner do projeto
 
-<img src="./public/thumbnail-01.png">
-<img src="./public/thumbnail-02.png">
+<img src="./public/Thumbnail-01.png">
+<img src="./public/Thumbnail-02.png">
 
 ### Shortcuts
 
